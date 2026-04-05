@@ -1,0 +1,201 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.savewise"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/rajasree/Documents/savewise/android/app/src/debug/AndroidManifest.xml:6:5-66
+15-->/Users/rajasree/Documents/savewise/android/app/src/debug/AndroidManifest.xml:6:22-64
+16    <!-- ✅ Storage permissions: WRITE only needed on API < 29 -->
+17    <uses-permission
+17-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:4:5-6:38
+18        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+18-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:5:9-65
+19        android:maxSdkVersion="28" />
+19-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:6:9-35
+20    <uses-permission
+20-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:7:5-9:38
+21        android:name="android.permission.READ_EXTERNAL_STORAGE"
+21-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:8:9-64
+22        android:maxSdkVersion="32" />
+22-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:9:9-35
+23
+24    <queries>
+24-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:37:5-42:15
+25        <intent>
+25-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:38:9-41:18
+26            <action android:name="android.intent.action.PROCESS_TEXT" />
+26-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:39:13-73
+26-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:39:21-70
+27
+28            <data android:mimeType="text/plain" />
+28-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:40:13-51
+28-->/Users/rajasree/Documents/savewise/android/app/src/main/AndroidManifest.xml:40:19-48
+29        </intent>
+30    </queries>
+31
+32    <permission
+32-->[androidx.core:core:1.13.1] /Users/rajasree/.gradle/caches/transforms-4/3830d890603985788b34a68193b0481f/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+33        android:name="com.example.savewise.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+33-->[androidx.core:core:1.13.1] /Users/rajasree/.gradle/caches/transforms-4/3830d890603985788b34a68193b0481f/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+34        android:protectionLevel="signature" />
+34-->[androidx.core:core:1.13.1] /Users/rajasree/.gradle/caches/transforms-4/3830d890603985788b34a68193b0481f/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+35
+36    <uses-permission android:name="com.example.savewise.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+36-->[androidx.core:core:1.13.1] /Users/rajasree/.gradle/caches/transforms-4/3830d890603985788b34a68193b0481f/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+36-->[androidx.core:core:1.13.1] /Users/rajasree/.gradle/caches/transforms-4/3830d890603985788b34a68193b0481f/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+37
+38    <application
+39        android:name="android.app.Application"
+40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+40-->[androidx.core:core:1.13.1] /Users/rajasree/.gradle/caches/transforms-4/3830d890603985788b34a68193b0481f/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+41        android:debuggable="true"
+42        android:extractNativeLibs="true"
+43        android:icon="@mipmap/ic_launcher"
+44        android:label="savewise" >
+45        <activity
+46            android:name="com.example.savewise.MainActivity"
+47            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+48            android:exported="true"
+49            android:hardwareAccelerated="true"
+50            android:launchMode="singleTop"
+51            android:taskAffinity=""
+52            android:theme="@style/LaunchTheme"
+53            android:windowSoftInputMode="adjustResize" >
+54            <meta-data
+55                android:name="io.flutter.embedding.android.NormalTheme"
+56                android:resource="@style/NormalTheme" />
+57
+58            <intent-filter>
+59                <action android:name="android.intent.action.MAIN" />
+60
+61                <category android:name="android.intent.category.LAUNCHER" />
+62            </intent-filter>
+63        </activity>
+64
+65        <meta-data
+66            android:name="flutterEmbedding"
+67            android:value="2" />
+68        <!--
+69           Declares a provider which allows us to store files to share in
+70           '.../caches/share_plus' and grant the receiving action access
+71        -->
+72        <provider
+72-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-21:20
+73            android:name="dev.fluttercommunity.plus.share.ShareFileProvider"
+73-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-77
+74            android:authorities="com.example.savewise.flutter.share_provider"
+74-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-74
+75            android:exported="false"
+75-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-37
+76            android:grantUriPermissions="true" >
+76-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-47
+77            <meta-data
+77-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:68
+78                android:name="android.support.FILE_PROVIDER_PATHS"
+78-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-67
+79                android:resource="@xml/flutter_share_file_paths" />
+79-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-65
+80        </provider>
+81        <!--
+82           This manifest declared broadcast receiver allows us to use an explicit
+83           Intent when creating a PendingItent to be informed of the user's choice
+84        -->
+85        <receiver
+85-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:26:9-32:20
+86            android:name="dev.fluttercommunity.plus.share.SharePlusPendingIntent"
+86-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-82
+87            android:exported="false" >
+87-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-37
+88            <intent-filter>
+88-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-31:29
+89                <action android:name="EXTRA_CHOSEN_COMPONENT" />
+89-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-65
+89-->[:share_plus] /Users/rajasree/Documents/savewise/build/share_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:30:25-62
+90            </intent-filter>
+91        </receiver>
+92
+93        <uses-library
+93-->[androidx.window:window:1.2.0] /Users/rajasree/.gradle/caches/transforms-4/ef42efddcc5f85515e7a1b7932edb90d/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+94            android:name="androidx.window.extensions"
+94-->[androidx.window:window:1.2.0] /Users/rajasree/.gradle/caches/transforms-4/ef42efddcc5f85515e7a1b7932edb90d/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+95            android:required="false" />
+95-->[androidx.window:window:1.2.0] /Users/rajasree/.gradle/caches/transforms-4/ef42efddcc5f85515e7a1b7932edb90d/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+96        <uses-library
+96-->[androidx.window:window:1.2.0] /Users/rajasree/.gradle/caches/transforms-4/ef42efddcc5f85515e7a1b7932edb90d/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+97            android:name="androidx.window.sidecar"
+97-->[androidx.window:window:1.2.0] /Users/rajasree/.gradle/caches/transforms-4/ef42efddcc5f85515e7a1b7932edb90d/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+98            android:required="false" />
+98-->[androidx.window:window:1.2.0] /Users/rajasree/.gradle/caches/transforms-4/ef42efddcc5f85515e7a1b7932edb90d/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+99
+100        <provider
+100-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/rajasree/.gradle/caches/transforms-4/3feea2e6893e5e1e029dfc8ddc03eb97/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+101            android:name="androidx.startup.InitializationProvider"
+101-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/rajasree/.gradle/caches/transforms-4/3feea2e6893e5e1e029dfc8ddc03eb97/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+102            android:authorities="com.example.savewise.androidx-startup"
+102-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/rajasree/.gradle/caches/transforms-4/3feea2e6893e5e1e029dfc8ddc03eb97/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+103            android:exported="false" >
+103-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/rajasree/.gradle/caches/transforms-4/3feea2e6893e5e1e029dfc8ddc03eb97/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+104            <meta-data
+104-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/rajasree/.gradle/caches/transforms-4/3feea2e6893e5e1e029dfc8ddc03eb97/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+105                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+105-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/rajasree/.gradle/caches/transforms-4/3feea2e6893e5e1e029dfc8ddc03eb97/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+106                android:value="androidx.startup" />
+106-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/rajasree/.gradle/caches/transforms-4/3feea2e6893e5e1e029dfc8ddc03eb97/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+107            <meta-data
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+108                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+109                android:value="androidx.startup" />
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+110        </provider>
+111
+112        <receiver
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+113            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+114            android:directBootAware="false"
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+115            android:enabled="true"
+115-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+116            android:exported="true"
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+117            android:permission="android.permission.DUMP" >
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+119                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+122                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+123            </intent-filter>
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+125                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+126            </intent-filter>
+127            <intent-filter>
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+128                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/rajasree/.gradle/caches/transforms-4/05356cfe88a8be77be9dd22f91003f0c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+129            </intent-filter>
+130        </receiver>
+131    </application>
+132
+133</manifest>
