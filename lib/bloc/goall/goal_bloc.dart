@@ -51,12 +51,11 @@ class GoalState extends Equatable {
   GoalState copyWith({
     GoalStatus? status,
     GoalModel? goal,
-    bool clearGoal = false, 
     String? errorMessage,
   }) {
     return GoalState(
       status: status ?? this.status,
-      goal: clearGoal ? null : (goal ?? this.goal),
+      goal: goal ?? this.goal,
       errorMessage: errorMessage ?? this.errorMessage,
     );
   }
@@ -79,12 +78,8 @@ class GoalBloc extends Bloc<GoalEvent, GoalState> {
   Future<void> _onLoad(LoadGoal event, Emitter<GoalState> emit) async {
     emit(state.copyWith(status: GoalStatus.loading));
     try {
-      final goal = await _repo.getGoalOrNull(); 
-      if (goal == null) {
-        emit(state.copyWith(status: GoalStatus.success, clearGoal: true));
-      } else {
-        emit(state.copyWith(status: GoalStatus.success, goal: goal));
-      }
+      final goal = await _repo.getGoal();
+      emit(state.copyWith(status: GoalStatus.success, goal: goal));
     } catch (e) {
       emit(state.copyWith(
           status: GoalStatus.failure, errorMessage: e.toString()));

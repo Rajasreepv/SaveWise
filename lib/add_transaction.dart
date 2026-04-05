@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -8,7 +7,6 @@ import 'package:savewise/bloc/transactions/transaction_bloc.dart';
 import 'package:uuid/uuid.dart';
 
 import '../models/transaction_model.dart';
-
 
 class AddTransactionScreen extends StatefulWidget {
   final TransactionModel? existing;
@@ -67,16 +65,15 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
     } else {
       bloc.add(AddTransaction(tx));
     }
-
-    
-    final txState = bloc.state;
-    double newBalance = txState.balance;
-    if (!_isEdit) {
-      newBalance += tx.type == TransactionType.income ? amount : -amount;
-    }
-    context
-        .read<GoalBloc>()
-        .add(SyncGoalAmount(newBalance.clamp(0, double.infinity)));
+    // ✅ FIX: SyncGoalAmount is NO LONGER fired here.
+    // Reason: bloc.state.balance here is STALE — the AddTransaction /
+    // UpdateTransaction event hasn't been processed yet (BLoC is async).
+    // Syncing from a stale balance was writing wrong currentAmount to disk.
+    //
+    // The correct balance is emitted by TransactionBloc AFTER it finishes
+    // processing. MainShell has a BlocListener that watches for
+    // TransactionStatus.success and fires SyncGoalAmount(state.balance)
+    // at that point — guaranteed to be the correct, freshly computed value.
 
     Navigator.pop(context);
   }
@@ -110,7 +107,7 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              
+              // ─── Type toggle ───────────────────────────────────────
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -140,15 +137,15 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
 
               const SizedBox(height: 20),
 
-              
+              // ─── Amount ────────────────────────────────────────────
               TextFormField(
                 controller: _amountCtrl,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
                 decoration: const InputDecoration(
                   labelText: 'Amount (₹)',
-                  prefixIcon: Icon(Icons.currency_rupee,
-                      color: AppTheme.primary),
+                  prefixIcon:
+                      Icon(Icons.currency_rupee, color: AppTheme.primary),
                 ),
                 validator: (v) {
                   if (v == null || v.isEmpty) return 'Enter an amount';
@@ -160,7 +157,7 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
 
               const SizedBox(height: 16),
 
-              
+              // ─── Category ──────────────────────────────────────────
               DropdownButtonFormField<TransactionCategory>(
                 value: _category,
                 decoration: const InputDecoration(labelText: 'Category'),
@@ -177,12 +174,12 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
 
               const SizedBox(height: 16),
 
-              
+              // ─── Date ──────────────────────────────────────────────
               GestureDetector(
                 onTap: _pickDate,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16, vertical: 14),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                   decoration: BoxDecoration(
                     color: AppTheme.background,
                     borderRadius: BorderRadius.circular(14),
@@ -195,8 +192,7 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
                       Text(
                         DateFormat('d MMMM yyyy').format(_date),
                         style: const TextStyle(
-                            fontSize: 14,
-                            color: AppTheme.textPrimary),
+                            fontSize: 14, color: AppTheme.textPrimary),
                       ),
                     ],
                   ),
@@ -205,13 +201,12 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
 
               const SizedBox(height: 16),
 
-              
+              // ─── Note ──────────────────────────────────────────────
               TextFormField(
                 controller: _noteCtrl,
                 decoration: const InputDecoration(
                   labelText: 'Note (optional)',
-                  prefixIcon: Icon(Icons.notes,
-                      color: AppTheme.primary),
+                  prefixIcon: Icon(Icons.notes, color: AppTheme.primary),
                 ),
                 maxLines: 2,
               ),
@@ -268,8 +263,7 @@ class _TypeButton extends StatelessWidget {
               Text(
                 label,
                 style: TextStyle(
-                  color:
-                      selected ? Colors.white : AppTheme.textSecondary,
+                  color: selected ? Colors.white : AppTheme.textSecondary,
                   fontWeight: FontWeight.w600,
                   fontSize: 14,
                 ),

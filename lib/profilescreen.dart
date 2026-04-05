@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,8 +12,6 @@ class ProfileScreen extends StatelessWidget {
   final ValueChanged<bool> onDarkModeChanged;
 
   const ProfileScreen({super.key, required this.onDarkModeChanged});
-
-  
 
   Future<void> _exportCsv(BuildContext context) async {
     try {
@@ -67,10 +64,7 @@ class ProfileScreen extends StatelessWidget {
     if (result.status == ShareResultStatus.success) {
       _showSnack(context, '✅ File shared successfully', isError: false);
     }
-    
   }
-
-  
 
   void _showSnack(BuildContext context, String msg, {required bool isError}) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -82,8 +76,6 @@ class ProfileScreen extends StatelessWidget {
       ),
     );
   }
-
-  
 
   void _showEditNameDialog(BuildContext context, String current) {
     final ctrl = TextEditingController(text: current);
@@ -137,12 +129,6 @@ class ProfileScreen extends StatelessWidget {
           ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: AppTheme.expense),
             onPressed: () {
-              
-              
-              
-              
-              
-              
               context.read<ProfileBloc>().add(const ClearFinancialData());
               Navigator.pop(ctx);
             },
@@ -186,8 +172,6 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -197,8 +181,6 @@ class ProfileScreen extends StatelessWidget {
       body: BlocConsumer<ProfileBloc, ProfileState>(
         listenWhen: (prev, curr) => curr.status != prev.status,
         listener: (context, state) {
-          
-          
           if (state.status == ProfileStatus.cleared) {
             context.read<TransactionBloc>().add(const LoadTransactions());
             context.read<GoalBloc>().add(const LoadGoal());
@@ -266,7 +248,6 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 20),
               _SectionLabel(label: 'Account', isDark: isDark),
               const SizedBox(height: 10),
-              
               const SizedBox(height: 32),
               Center(
                 child: Text(
@@ -284,8 +265,6 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 class _ProfileHeader extends StatelessWidget {
   final String userName;
@@ -336,8 +315,6 @@ class _ProfileHeader extends StatelessWidget {
                         fontSize: 20,
                         fontWeight: FontWeight.w800)),
                 const SizedBox(height: 4),
-                const Text('Finance Companion',
-                    style: TextStyle(color: Colors.white70, fontSize: 13)),
               ],
             ),
           ),
