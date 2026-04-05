@@ -57,7 +57,7 @@ Understand where your money goes.
 - Toggle **dark mode** (switches the entire app instantly)
 - **Export to CSV** — saves all your transactions as a `.csv` file to Downloads (Android) or opens the share sheet (iOS)
 - **Clear All Data** — deletes all transactions and your goal, but keeps your name and dark mode setting
-- **Log Out** — wipes everything and resets the app to a fresh state
+
 
 ---
 
